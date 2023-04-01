@@ -1,0 +1,85 @@
+<%- include('includes/header.ejs') %>
+<nav class="navbar navbar-expand-lg shadow-lg p-3 mb-5 rounded">
+    <div class="container-fluid">
+        <img src="images/logo.png" class="rounded-circle img-fluid img-sm me-5"/>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="navbar-brand" href="/"><i class="fas fa-lg">Home</i></a>
+                <a class="nav-link" href="/register">
+                    <i class="fas fa-lg fa-solid fa-registered"> Register</i>
+                </a>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal">
+                    <i class="fas fa-lg fa-solid fa-envelope"> Contact Us</i>
+                </a>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#about">
+                    <i class="fas fa-lg">About</i>
+                </a>
+            </div>
+
+        </div>
+<!--        <i class="fas fa-lg fa-solid fa-user-md d-flex justify-content-end p-5">User</i>-->
+    </div>
+
+</nav>
+<!--Contact us modal-->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <i class="fas fa-lg">
+                </i>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--PROFILE MODAL-->
+<div class="modal fade" id="profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-lg fa-thin fa-user-astronaut">
+                        Astronaut
+                        Profile Info</i></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <i class="fas fa-lg">User name: <br><br></i><br><br>
+                Email <i class="fas fa-lg fa-solid fa-at"></i>: <a
+                        href="mailto: test@gmail.com">test@gmail.com</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ABOUT MODAL-->
+<div class="modal modal-dialog-scrollable fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">About</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <p>Thanks for visiting our website🤭</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

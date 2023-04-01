@@ -1,0 +1,81 @@
+<%- include('navbar.ejs') %>
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="card-header mb-4">
+                    <h1 class="text-center fa-light fa-solid">Register Info</h1>
+                </div>
+                <div class="card-body">
+                    <div class="text-danger"><% msg %></div>
+                    <form action="/register" method="post" id="registerForm" autocomplete="on">
+                        <p class="border border-pill border-info w-25">Patient Code: <strong id="generatedCode"><%= code %></strong></p>
+                        <div class="form-group mb-4">
+                            <input type="text" name="firstName" class="form-control invalid" id="fname"
+                                   placeholder="first Name" pattern="^[a-zA-Z]{3,20}$"
+                                   title="name must be between 3-20 letters in length"
+                                   required>
+                            <p class="text-danger d-none fnameErr"></p>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="lastName" class="form-control" id="lname" placeholder="last Name"
+                                   pattern="^[a-zA-Z]{3,20}$"
+                                   title="name must be between 3-20 letters in length" required>
+                            <p class="text-danger d-none lnameErr"></p>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="age" class="form-control invalid" id="age"
+                                   placeholder="Your age" required>
+                            <p class="text-danger d-none dateErr"></p>
+                        </div>
+                        <div class="form-group mb-4">
+                            <select class="form-select" id="gender" name="gender"
+                                    aria-label="Floating label select example">
+                                <option value="gender" disabled selected>Gender</option>
+                                <option value="female">female</option>
+                                <option value="male">male</option>
+                            </select>
+                            <p class="text-danger d-none genderErr">Please select a gender</p>
+                        </div>
+                        <div class="form-group d-flex align-items-center">
+                            <label for="forMedicine" class="form-label me-4">Medicine Code:</label>
+                            <input type="text" class="form-control me-2" id="forMedicine" list="medicinesList">
+                            <datalist id="medicinesList">
+                            </datalist>
+                            <button type="button" class="btn btn-outline-info rounded-3"
+                                    id="add-medicine">Add
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary border-secondary rounded-3 ms-2"
+                                    id="modify-midicine-list">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <p class="text-danger d-none medicineErr mb-4">Medicine code must be num between 3-8 in
+                            length</p>
+                        <div class="form-group d-flex align-items-center">
+                            <label for="fordeases" class="form-label me-2">Enter a disease:</label>
+                            <input type="text" class="form-control me-2" id="fordeases" list="deaseslist">
+                            <datalist id="deaseslist">
+                            </datalist>
+                            <button type="button" class="btn btn-outline-info rounded-3"
+                                    id="add-disease">Add
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary border-secondary rounded-3 ms-2"
+                                    id="modify-midicine-list">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <p class="text-danger d-none deasesErr mb-4">Dease name must be not empty</p>
+                        <div class="col-md-12 text-center mb-4">
+                            <button type="submit" class="btn btn-light rounded-pill w-25 border-dark" border-0
+                                    id="save-btn"><i class="fas fa-lg fa-light fa-save"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/register.js"></script>
+<%- include('includes/footer.ejs') %>
+
